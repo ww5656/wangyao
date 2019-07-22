@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 表单 -->
+    <!-- action 表单提交的地址 -->
+    <!-- get提交
+参数被放到地址提交,比如: /D:/abc?username=张三&pwd=123&sex=0&experience=0
+不安全
+地址栏拼接的参数长度有限,一般是<4k
+一般用于获取数据
+post提交
+地址栏不显示提交内容,再请求体显示
+相对安全
+提交的数据量没有上限
+一般用于提交保存数据 -->
+    <form action="https://www.baidu.com/" method="post">
+        <fieldset>
+            <legend>基本信息</legend>
+            用户名: <input type="text" placeholder="请输入用户名" name="username"> <br>
+            密码: <input disabled type="password" name="password"> <br>
+            <!-- name属性相同 才能实现 互斥 -->
+            性别: <label for="men">男:</label><input id="men" type="radio" name="sex" checked value="1">
+            <label for="women">女: <input id="women" type="radio" name="sex" value="0"></label>
+
+            <br>
+            <!-- 多选 -->
+            <!-- checked 默认选中 -->
+            爱好: 篮球:<input type="checkbox" checked name="like" value="0"> 乒乓球: <input type="checkbox" name="like"
+                value="1">
+            足球:
+            <input type="checkbox" name="like" value="2">
+
+        </fieldset>
+        <br>
+        <fieldset>
+            <!-- 下拉选择框 -->
+            经验: <select name="exp" id="">
+                <option value="0">无经验</option>
+                <option value="1">1-3年</option>
+                <option selected value="2">3-5年</option>
+                <option value="3">5年以上</option>
+            </select>
+            <br>
+            <!-- 上传文件 -->
+            头像:
+            <input type="file">
+            <br>
+            个人描述:
+            <textarea name="desc" id="" cols="30" rows="10"></textarea>
+            <br>
+
+        </fieldset>
+
+        <input type="submit" value="登录">
+        <input type="reset">
+    </form>
+</body>
+
+</html>
